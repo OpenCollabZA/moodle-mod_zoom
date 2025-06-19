@@ -238,7 +238,8 @@ class send_ical_notifications extends scheduled_task {
             if ($registrantjoinurl) {
                 $icalevent->add_property('location', $registrantjoinurl);
             } else {
-                $icalevent->add_property('location', $zoomurl);
+                // For OC's purposes we need the join url.
+                $icalevent->add_property('location', $zoom->join_url);
             }
         }
 
